@@ -1,18 +1,24 @@
 class PlacesController < ApplicationController
   def index
-    @places = Place.all
+    @place = Place.all
   end
 
   def new
-    @post = Post.new
+    @place = Place.new
   end
 
   def create
-    @post = Post.new
-    @post["author"] = params["post"]["author"]
-    @post["body"] = params["post"]["body"]
-    @post["imaage"] = params["post"]["imaage"]
-    @post.save
-    redirect_to "/posts"
+    @place = Place.new
+    @place["author"] = params["place"]["author"]
+    @place["body"] = params["place"]["body"]
+    @place["imaage"] = params["place"]["imaage"]
+    @place.save
+    redirect_to "/places"
   end
+
+  def show
+    @place = Place.all
+  end
+  
 end
+

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @post = Post.all
   end
 
   def new
@@ -15,4 +15,9 @@ class PostsController < ApplicationController
     @post.save
     redirect_to "/posts"
   end
+
+  def show
+    @post = Post.all
+  end
+
 end
