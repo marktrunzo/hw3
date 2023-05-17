@@ -5,13 +5,13 @@
 <h3>Notes</h3>
 
 <ul>
-  <% for @post in @posts %>
+  <% for post in @posts %>
     <li><%= post["title"] %>, <%= post["posted_on"] %></li>
   <% end %>
 </ul>
 
 <p>
-  <a href="/posts/new?post_id=<%= @post["id"] %>">New Post</a>
+  <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
 </p>
 
 <p><a href="/places">Back to All Places</a></p>

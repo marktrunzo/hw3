@@ -1,8 +1,11 @@
-<div class="row">
-  <% for @place in @places %>
-    <div class="col-3">
-      <h4><%= @place["place"] %></h4>
-      <p><%= @post["description"] %></p>
-    </div>
-  <% end %>
-</div>
+<h1>My Travels</h1>
+ 
+ <ul>
+   <% for place in @places %>
+    <li>
+      <a href="/places/<%= place["id"] %>"><%= place["place"] %></a>
+    </li>
+   <% end %>
+</ul>
+
+<p><a href="/places/new">Add a journey</a></p>
