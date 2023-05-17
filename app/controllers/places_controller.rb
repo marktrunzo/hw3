@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
   def index
-    @place = Place.all
+    @places = Place.all
   end
 
   def new
@@ -9,16 +9,15 @@ class PlacesController < ApplicationController
 
   def create
     @place = Place.new
-    @place["author"] = params["place"]["author"]
-    @place["body"] = params["place"]["body"]
-    @place["imaage"] = params["place"]["imaage"]
+    @place["place"] = params["place"]["place"]
+    @place["description"] = params["place"]["description"]
     @place.save
     redirect_to "/places"
   end
 
   def show
-    @place = Place.all
+    @post = Post.find_by({ "id" => params["id"] })
   end
-  
+
 end
 
