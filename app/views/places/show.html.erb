@@ -4,7 +4,10 @@
 
 <ul>
   <% for post in @post %>
-    <li><%= post["title"] %>, <%= post["posted_on"] %></li>
+    <li><%= post["title"] %></li>
+    <li><%= post["posted_on"] %></li>
+    <li><%= post["description"] %></li>
+    <li><%= ""%></li>
   <% end %>
 </ul>
 
@@ -12,4 +15,4 @@
   <a href="/posts/new">New Post</a>
 </p>
 
-<p><a href="/places">Back to all journies</a></p>
+<p><a href="/">Back to all journies</a></p>
