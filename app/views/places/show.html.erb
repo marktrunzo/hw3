@@ -2,17 +2,19 @@
 
 <h2>Notes</h2>
 
-<ul>
+<div>
   <% for post in @post %>
-    <li><%= post["title"] %></li>
-    <li><%= post["posted_on"] %></li>
+    <h3><%= post["title"] %></h3>
+    <p><%= post["posted_on"] %></p>
     <li><%= post["description"] %></li>
-    <li><%= ""%></li>
   <% end %>
-</ul>
+</div>
 
 <p>
-  <a href="/posts/new">New Post</a>
+  <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
+
 </p>
 
 <p><a href="/">Back to all journies</a></p>
+
+<p><%= button_to "Delete this place", @place, :method => "delete" %></p>

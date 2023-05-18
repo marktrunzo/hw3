@@ -11,13 +11,19 @@ class PlacesController < ApplicationController
     @place = Place.new
     @place["name"] = params["place"]["name"]
     @place.save
+    redirect_to "/"
   end
 
   def show
-    @place = Place.find_by(params["id"])
-    @post = Post.where({ "place_id" => @place["id"] })
+    @place = Place.find_by("id" => params["id"])
+    @post = Post.where("place_id" => @place["id"])
   end
-  
+
+  def destroy
+    @place = Place.find_by({ "id" => params["id"] })
+    @place.destroy
+    redirect_to "/"
+  end
 
 end
 
